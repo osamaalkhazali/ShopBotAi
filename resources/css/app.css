@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import the custom CSS variables and utilities from the public CSS file */
+@import url("/css/app.css");
+
+/* Additional CSS for extending Tailwind with custom variables */
+@layer base {
+   
+
+    /* Apply custom colors to Tailwind's dark mode */
+    .dark {
+        --tw-text-opacity: 1;
+        color: var(--text-light);
+    }
+
+    body {
+        @apply bg-gray-900;
+        color: var(--text-light);
+    }
+}
+
+/* Add custom components that use the CSS variables */
+@layer components {
+    .card-custom {
+        @apply rounded-lg overflow-hidden;
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        transition: all 0.3s ease;
+    }
+
+    .card-custom:hover {
+        border-color: var(--card-border-hover);
+        box-shadow: 0 4px 6px var(--primary-shadow);
+    }
+
+    .btn-custom {
+        @apply px-4 py-2 rounded-md font-medium transition-colors;
+    }
+
+    .btn-custom-primary {
+        @apply btn-custom;
+        background-color: var(--primary);
+        color: var(--text-light);
+    }
+
+    .btn-custom-primary:hover {
+        background-color: var(--primary-dark);
+    }
+
+    .btn-custom-secondary {
+        @apply btn-custom;
+        background-color: var(--secondary);
+        color: var(--text-light);
+    }
+
+    .btn-custom-secondary:hover {
+        background-color: var(--secondary-light);
+    }
+}
+
+/* Custom utilities that use the CSS variables */
+@layer utilities {
+    .text-primary-custom {
+        color: var(--primary);
+    }
+
+    .text-accent-custom {
+        color: var(--accent);
+    }
+
+    .bg-primary-custom {
+        background-color: var(--primary);
+    }
+
+    .bg-secondary-custom {
+        background-color: var(--secondary);
+    }
+
+    .border-primary-custom {
+        border-color: var(--primary);
+    }
+}

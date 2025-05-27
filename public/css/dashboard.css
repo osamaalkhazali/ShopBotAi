@@ -1,0 +1,235 @@
+/* Dashboard specific styles with simplified color theming */
+
+:root {
+    /* Dashboard Color Theme - Using main brand colors from app.css */
+    --dashboard-bg: var(--bg-dark);
+    --dashboard-text: var(--text-light);
+    --dashboard-card-bg: var(--bg-medium);
+    --dashboard-card-border: var(--secondary-lighter);
+    --dashboard-card-hover-border: var(--primary);
+    --dashboard-section-title: var(--text-light);
+    --dashboard-muted-text: var(--gray-400);
+    --dashboard-product-item-bg: var(--bg-light);
+    --dashboard-product-title: white;
+    --dashboard-product-price: var(--primary-light);
+    --dashboard-button-primary-bg: var(--primary);
+    --dashboard-button-primary-hover: var(--primary-dark);
+    --dashboard-button-secondary-bg: var(--bg-light);
+    --dashboard-button-secondary-hover: var(--bg-lighter);
+    --dashboard-stars-color: var(--amber-400);
+    --dashboard-header-bg: var(--bg-medium);
+    --dashboard-card-shadow: var(--shadow-color);
+    --dashboard-card-hover-shadow: var(--primary-shadow);
+    --dashboard-delete-btn-bg: var(--error);
+    --dashboard-delete-btn-hover: var(--error-light);
+    --dashboard-toast-success-bg: var(--success);
+    --dashboard-toast-error-bg: var(--error);
+}
+
+/* Base styles */
+.dashboard-container {
+    background-color: var(--dashboard-bg);
+    color: var(--dashboard-text);
+}
+
+/* Section cards */
+.dashboard-section {
+    background-color: var(--dashboard-card-bg);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px var(--dashboard-card-shadow);
+}
+
+.dashboard-section-title {
+    color: var(--dashboard-section-title);
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.dashboard-section-title-icon {
+    color: var(--primary-light);
+}
+
+.dashboard-muted-text {
+    color: var(--dashboard-muted-text);
+    font-size: 0.75rem;
+}
+
+/* Product items */
+.dashboard-product-item {
+    background-color: var(--dashboard-product-item-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--dashboard-card-border);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.dashboard-product-item:hover {
+    border-color: var(--dashboard-card-hover-border);
+    box-shadow: 0 10px 15px var(--dashboard-card-hover-shadow);
+    transform: translateY(-2px);
+}
+
+.dashboard-product-title {
+    color: var(--dashboard-product-title);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.dashboard-product-price {
+    color: var(--dashboard-product-price);
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.dashboard-stars {
+    color: var(--dashboard-stars-color);
+    font-size: 0.75rem;
+}
+
+.dashboard-reviews-count {
+    color: var(--dashboard-muted-text);
+    font-size: 0.75rem;
+}
+
+/* Buttons */
+.dashboard-button-primary {
+    background-color: var(--dashboard-button-primary-bg);
+    color: white;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.dashboard-button-primary:hover {
+    background-color: var(--dashboard-button-primary-hover);
+}
+
+.dashboard-button-secondary {
+    background-color: var(--dashboard-button-secondary-bg);
+    color: white;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.dashboard-button-secondary:hover {
+    background-color: var(--dashboard-button-secondary-hover);
+}
+
+.dashboard-button-saved {
+    background-color: var(--dashboard-button-primary-bg);
+}
+
+.dashboard-button-save {
+    background-color: var(--dashboard-button-secondary-bg);
+}
+
+/* Carousel navigation */
+.dashboard-nav-button {
+    background-color: rgba(31, 41, 55, 0.8);
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.dashboard-nav-button:hover {
+    background-color: var(--secondary-light);
+}
+
+/* Modal styles */
+.dashboard-modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-modal-content {
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary-light);
+    border-radius: 0.5rem;
+    color: var(--dashboard-text);
+}
+
+.dashboard-modal-warning-icon {
+    color: var(--amber-500);
+}
+
+.dashboard-modal-cancel {
+    background-color: var(--secondary-light);
+}
+
+.dashboard-modal-delete {
+    background-color: var(--dashboard-delete-btn-bg);
+}
+
+.dashboard-modal-delete:hover {
+    background-color: var(--dashboard-delete-btn-hover);
+}
+
+/* Toast notifications */
+.dashboard-toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    z-index: 50;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.dashboard-toast-success {
+    background-color: var(--dashboard-toast-success-bg);
+    color: white;
+}
+
+.dashboard-toast-error {
+    background-color: var(--dashboard-toast-error-bg);
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* "Load more" button */
+.dashboard-load-more {
+    background-color: var(--secondary-light);
+    color: white;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.dashboard-load-more:hover {
+    background-color: var(--secondary);
+}
+
+/* Empty state */
+.dashboard-empty-state {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--dashboard-muted-text);
+}
+
+.dashboard-empty-icon {
+    color: var(--secondary);
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Header styles */
+.dashboard-header {
+    background-color: var(--dashboard-header-bg);
+}

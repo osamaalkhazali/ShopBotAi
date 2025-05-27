@@ -1,0 +1,888 @@
+/* CSS variables are now loaded from layouts/css/root.blade.css */
+
+/* Custom Scrollbar Styles */
+@layer utilities {
+    /* For Webkit browsers like Chrome/Safari/Edge */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: var(--gray-800);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--gray-700);
+        border-radius: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: var(--gray-600);
+    }
+
+    /* For Firefox */
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: var(--gray-700) var(--gray-800);
+    }
+}
+
+/* Base element styles with CSS variables */
+body {
+    font-family: var(--font-family);
+    color: var(--text-light);
+    background-color: var(--gray-900);
+}
+
+/* Utility classes for welcome page */
+.welcome-page {
+    background: linear-gradient(
+        to bottom,
+        var(--welcome-body-bg-from),
+        var(--welcome-body-bg-to)
+    );
+    color: var(--welcome-text);
+}
+
+.dark .welcome-page {
+    background: linear-gradient(
+        to bottom,
+        var(--welcome-body-bg-dark-from),
+        var(--welcome-body-bg-dark-to)
+    );
+    color: var(--welcome-text-dark);
+}
+
+.welcome-nav-link {
+    color: var(--welcome-nav-text);
+}
+
+.welcome-nav-link:hover {
+    color: var(--welcome-nav-text-hover);
+}
+
+.dark .welcome-nav-link {
+    color: var(--welcome-nav-text-dark);
+}
+
+.dark .welcome-nav-link:hover {
+    color: var(--welcome-nav-text-dark-hover);
+}
+
+.welcome-button-primary {
+    background-color: var(--welcome-button-primary-bg);
+    color: var (--welcome-cta-text);
+}
+
+.welcome-button-primary:hover {
+    background-color: var(--welcome-button-primary-hover);
+}
+
+.welcome-button-secondary {
+    background-color: var(--welcome-button-secondary-bg);
+    color: var(--welcome-button-secondary-text);
+    border-color: var(--welcome-button-secondary-border);
+}
+
+.welcome-button-secondary:hover {
+    border-color: var(--welcome-button-secondary-border-hover);
+    color: var(--welcome-button-primary-bg);
+}
+
+.welcome-features-section {
+    background-color: var(--welcome-features-bg);
+}
+
+.dark .welcome-features-section {
+    background-color: var(--welcome-features-bg-dark);
+}
+
+.welcome-card {
+    background-color: var(--welcome-card-bg);
+    box-shadow: 0 1px 3px var(--welcome-card-shadow);
+}
+
+.dark .welcome-card {
+    background-color: var(--welcome-card-bg-dark);
+}
+
+.welcome-card-title {
+    color: var(--welcome-card-text);
+}
+
+.dark .welcome-card-title {
+    color: var(--welcome-card-text-dark);
+}
+
+.welcome-card-description {
+    color: var(--welcome-card-description);
+}
+
+.dark .welcome-card-description {
+    color: var(--welcome-card-description-dark);
+}
+
+.welcome-chatbot-header {
+    background-color: var(--welcome-chatbot-header-bg);
+}
+
+.welcome-chatbot-message {
+    background-color: var(--welcome-chatbot-message-bg);
+}
+
+.dark .welcome-chatbot-message {
+    background-color: var(--welcome-chatbot-message-bg-dark);
+}
+
+.welcome-example-query {
+    background-color: var(--welcome-example-query-bg);
+    color: var(--welcome-example-query-text);
+}
+
+.dark .welcome-example-query {
+    background-color: var(--welcome-example-query-bg-dark);
+    color: var(--welcome-example-query-text-dark);
+}
+
+.welcome-cta-section {
+    background-color: var(--welcome-cta-bg);
+    color: var(--welcome-cta-text);
+}
+
+.welcome-cta-button {
+    background-color: var(--welcome-cta-button-bg);
+    color: var(--welcome-cta-button-text);
+}
+
+.welcome-cta-button:hover {
+    background-color: var(--welcome-cta-button-hover);
+}
+
+.welcome-footer {
+    background-color: var(--welcome-footer-bg);
+    color: var(--welcome-footer-text);
+}
+
+.dark .welcome-footer {
+    background-color: var(--welcome-footer-bg-dark);
+    color: var(--welcome-footer-text-dark);
+}
+
+.welcome-footer-link {
+    color: var(--welcome-footer-text);
+}
+
+.welcome-footer-link:hover {
+    color: var(--welcome-footer-link-hover);
+}
+
+.dark .welcome-footer-link:hover {
+    color: var(--welcome-footer-link-hover-dark);
+}
+
+.welcome-product-title {
+    color: var(--welcome-product-title);
+}
+
+.dark .welcome-product-title {
+    color: var(--welcome-product-title-dark);
+}
+
+.welcome-product-price {
+    color: var(--welcome-price-color);
+}
+
+.dark .welcome-product-price {
+    color: var(--welcome-price-color-dark);
+}
+
+/* Utility classes for colors */
+.primary-bg {
+    background-color: var(--primary);
+}
+.primary-dark-bg {
+    background-color: var(--primary-dark);
+}
+.primary-light-bg {
+    background-color: var(--primary-light);
+}
+.secondary-bg {
+    background-color: var(--secondary);
+}
+.accent-bg {
+    background-color: var(--accent);
+}
+.card-bg {
+    background-color: var(--card-bg);
+}
+.success-bg {
+    background-color: var(--success);
+}
+.warning-bg {
+    background-color: var(--warning);
+}
+.error-bg {
+    background-color: var(--error);
+}
+
+/* Text colors */
+.primary-text {
+    color: var(--primary);
+}
+.secondary-text {
+    color: var(--secondary);
+}
+.accent-text {
+    color: var(--accent);
+}
+.light-text {
+    color: var(--text-light);
+}
+.dark-text {
+    color: var(--text-dark);
+}
+.muted-text {
+    color: var(--text-muted);
+}
+.success-text {
+    color: var(--success);
+}
+.warning-text {
+    color: var(--warning);
+}
+.error-text {
+    color: var(--error);
+}
+.stars-text {
+    color: var(--stars-color);
+}
+
+/* Border colors */
+.primary-border {
+    border-color: var(--primary);
+}
+.card-border {
+    border-color: var(--card-border);
+}
+.card-border-hover {
+    border-color: var(--card-border-hover);
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--text-light);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-light);
+    border-color: var(--secondary-light);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--text-dark);
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+/* Card styles */
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+.card:hover {
+    border-color: var(--card-border-hover);
+    box-shadow: 0 4px 6px var(--primary-shadow);
+}
+
+/* Header styles */
+.site-header {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+/* Custom Toast Notifications */
+.product-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    padding: 10px 15px;
+    border-radius: 6px;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    animation: slide-in 0.3s ease-out forwards;
+}
+
+.toast-hide {
+    animation: slide-out 0.3s ease-out forwards;
+}
+
+.toast-icon {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Navbar utility classes */
+.navbar-bg {
+    background-color: var(--navbar-bg);
+}
+
+.navbar-link {
+    color: var(--navbar-link);
+}
+
+.navbar-link:hover {
+    color: var(--navbar-link-hover);
+}
+
+.navbar-link.active {
+    color: var(--navbar-link-active);
+}
+
+.navbar-dropdown-button {
+    color: var(--navbar-dropdown-button);
+}
+
+.navbar-dropdown-button:hover {
+    color: var(--navbar-dropdown-button-hover);
+}
+
+.dropdown-link {
+    color: var(--navbar-dropdown-text);
+    background-color: var(--navbar-dropdown-bg);
+}
+
+.dropdown-link:hover {
+    background-color: var(--navbar-dropdown-hover);
+}
+
+.navbar-hamburger {
+    color: var(--navbar-hamburger);
+}
+
+.navbar-hamburger:hover {
+    color: var(--navbar-hamburger-hover);
+}
+
+.navbar-border {
+    border-color: var(--navbar-border);
+}
+
+.responsive-navbar-link {
+    color: var(--navbar-link);
+}
+
+.responsive-navbar-link:hover {
+    color: var(--navbar-link-hover);
+}
+
+.responsive-navbar-link.active {
+    color: var(--navbar-link-active);
+}
+
+/* Auth page styling */
+.auth-body {
+    color: var(--auth-text);
+}
+
+.auth-bg {
+    background-color: var(--auth-bg);
+}
+
+.auth-card {
+    background-color: var(--auth-card-bg);
+    border-color: var(--bg-lighter);
+}
+
+.auth-logo-color {
+    color: var(--auth-logo-color);
+}
+
+/* Auth form elements */
+.auth-label {
+    color: var(--auth-label);
+}
+
+.auth-input {
+    background-color: var(--auth-input-bg);
+    border-color: var(--auth-input-border);
+    color: var(--auth-text);
+}
+
+.auth-input:focus {
+    border-color: var(--auth-input-focus-border);
+    box-shadow: 0 0 0 2px var(--primary-shadow);
+}
+
+.auth-btn-primary {
+    background-color: var(--auth-btn-primary-bg);
+    color: var(--auth-btn-primary-text);
+}
+
+.auth-btn-primary:hover {
+    background-color: var(--auth-btn-primary-hover);
+}
+
+.auth-link {
+    color: var(--auth-link);
+}
+
+.auth-link:hover {
+    color: var(--auth-link-hover);
+}
+
+.auth-error {
+    color: var(--auth-error-text);
+}
+
+.auth-success {
+    color: var(--auth-success-text);
+}
+
+.auth-text-muted {
+    color: var(--auth-text-muted);
+}
+
+/* App main layout styling */
+.app-body {
+    background-color: var(--app-bg);
+    color: var(--app-text);
+}
+
+.app-header {
+    background-color: var(--app-header-bg);
+    border-bottom: 1px solid var(--app-card-border);
+}
+
+.app-header h2 {
+    color: var(--app-header-text);
+}
+
+.app-main {
+    background-color: var(--app-bg);
+}
+
+/* App card and section styling */
+.app-card {
+    background-color: var(--app-card-bg);
+    border: 1px solid var(--app-card-border);
+    border-radius: 0.5rem;
+}
+
+.app-card:hover {
+    border-color: var(--app-card-hover-border);
+}
+
+.app-section-title {
+    color: var(--app-section-title);
+    font-weight: 600;
+}
+
+.app-section-title-icon {
+    color: var(--app-section-title-icon);
+}
+
+.app-muted-text {
+    color: var(--app-muted-text);
+}
+
+/* App buttons */
+.app-btn-primary {
+    background-color: var(--app-btn-primary-bg);
+    color: var(--app-btn-primary-text);
+}
+
+.app-btn-primary:hover {
+    background-color: var(--app-btn-primary-hover);
+}
+
+.app-btn-secondary {
+    background-color: var(--app-btn-secondary-bg);
+    color: var(--app-btn-secondary-text);
+}
+
+.app-btn-secondary:hover {
+    background-color: var(--app-btn-secondary-hover);
+}
+
+.app-btn-danger {
+    background-color: var(--app-btn-danger-bg);
+    color: var (--app-btn-danger-text);
+}
+
+.app-btn-danger:hover {
+    background-color: var(--app-btn-danger-hover);
+}
+
+/* App form elements */
+.app-label {
+    color: var(--app-text);
+}
+
+.app-input {
+    background-color: var(--app-input-bg);
+    border-color: var(--app-input-border);
+    color: var(--app-input-text);
+}
+
+.app-input:focus {
+    border-color: var(--app-link);
+    box-shadow: 0 0 0 2px var(--primary-shadow);
+}
+
+.app-link {
+    color: var(--app-link);
+}
+
+.app-link:hover {
+    color: var(--app-link-hover);
+}
+
+/* Admin panel styling */
+.admin-navbar {
+    background-color: var(--admin-navbar-bg);
+    border-bottom: 1px solid var(--bg-lighter);
+}
+
+.admin-logo {
+    color: var(--admin-logo-color);
+}
+
+.admin-logo-highlight {
+    color: var(--admin-logo-highlight);
+}
+
+.admin-header-link {
+    color: var(--admin-sidebar-text);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.admin-header-link:hover {
+    background-color: var(--admin-sidebar-hover);
+    color: white;
+}
+
+.admin-username {
+    color: var(--admin-text);
+}
+
+.admin-avatar {
+    background-color: var(--admin-sidebar-bg);
+    color: var(--admin-text);
+}
+
+.admin-logout-btn {
+    color: var(--admin-sidebar-text);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.admin-logout-btn:hover {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: var(--error-light);
+}
+
+.admin-burger-btn {
+    color: var(--admin-sidebar-text);
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.admin-burger-btn:hover {
+    background-color: var(--admin-sidebar-hover);
+    color: white;
+}
+
+/* Admin sidebar */
+.admin-sidebar {
+    width: 13rem;
+    background-color: var(--admin-sidebar-bg);
+    border-right: 1px solid var(--bg-lighter);
+    padding-top: 4rem;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    overflow-y: auto;
+}
+
+.admin-sidebar-heading {
+    color: var(--admin-sidebar-heading);
+    padding: 0.75rem 0 0.25rem 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.admin-sidebar-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    color: var(--admin-sidebar-text);
+    transition: all 0.2s ease;
+}
+
+.admin-sidebar-link:hover {
+    background-color: var(--admin-sidebar-hover);
+    color: white;
+}
+
+.admin-sidebar-link.sidebar-active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid var(--admin-sidebar-active);
+}
+
+/* Mobile sidebar */
+.admin-mobile-sidebar {
+    background-color: var(--admin-sidebar-bg);
+    z-index: 30;
+    border-right: 1px solid var(--bg-lighter);
+    overflow-y: auto;
+}
+
+.admin-mobile-sidebar-header {
+    background-color: var(--admin-navbar-bg);
+    color: var(--admin-text);
+    border-bottom: 1px solid var(--bg-lighter);
+}
+
+.admin-mobile-close-btn {
+    color: var(--admin-sidebar-text);
+    padding: 0.25rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.admin-mobile-close-btn:hover {
+    background-color: var(--admin-sidebar-hover);
+    color: white;
+}
+
+/* Admin breadcrumbs */
+.admin-breadcrumbs-container {
+    background-color: var(--admin-card-bg);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+}
+
+.admin-breadcrumbs-content {
+    color: var(--admin-breadcrumb-text);
+}
+
+.admin-breadcrumb-link {
+    color: var(--admin-breadcrumb-text);
+    transition: color 0.2s ease;
+}
+
+.admin-breadcrumb-link:hover {
+    color: var(--admin-breadcrumb-hover);
+}
+
+/* Admin alerts */
+.admin-alert {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.admin-alert-success {
+    background-color: var(--admin-alert-success-bg);
+    border-left: 4px solid var(--admin-alert-success-border);
+    color: var(--admin-alert-success-text);
+}
+
+.admin-alert-error {
+    background-color: var(--admin-alert-error-bg);
+    border-left: 4px solid var(--admin-alert-error-border);
+    color: var(--admin-alert-error-text);
+}
+
+/* Admin card/content sections */
+.admin-card {
+    background-color: var(--admin-card-bg);
+    border: 1px solid var(--admin-card-border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.admin-card:hover {
+    border-color: var(--admin-card-hover-border);
+}
+
+.admin-card-title {
+    color: var(--admin-text);
+    font-weight: 600;
+}
+
+.admin-card-subtitle {
+    color: var(--admin-sidebar-text);
+}
+
+/* Admin tables */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    background-color: var(--admin-table-header-bg);
+    color: var(--admin-table-header-text);
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.825rem;
+}
+
+.admin-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--admin-table-border);
+    color: var(--admin-text);
+}
+
+.admin-table tbody tr {
+    background-color: var(--admin-table-row-bg);
+    transition: background-color 0.2s ease;
+}
+
+.admin-table tbody tr:nth-child(even) {
+    background-color: var(--admin-table-row-alt-bg);
+}
+
+.admin-table tbody tr:hover {
+    background-color: var(--admin-table-row-hover);
+}
+
+/* Admin buttons */
+.admin-btn-primary {
+    background-color: var(--admin-btn-primary-bg);
+    color: var(--admin-btn-primary-text);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.admin-btn-primary:hover {
+    background-color: var(--admin-btn-primary-hover);
+}
+
+.admin-btn-secondary {
+    background-color: var(--admin-btn-secondary-bg);
+    color: var(--admin-btn-secondary-text);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.admin-btn-secondary:hover {
+    background-color: var(--admin-btn-secondary-hover);
+}
+
+.admin-btn-danger {
+    background-color: var(--admin-btn-danger-bg);
+    color: var(--admin-btn-danger-text);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.admin-btn-danger:hover {
+    background-color: var(--admin-btn-danger-hover);
+}
+
+/* Admin form elements */
+.admin-input {
+    background-color: var(--admin-input-bg);
+    border: 1px solid var(--admin-input-border);
+    color: var(--admin-input-text);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.admin-input:focus {
+    outline: none;
+    border-color: var(--admin-input-focus-border);
+    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+}
+
+.admin-label {
+    color: var(--admin-text);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.admin-select {
+    background-color: var(--admin-input-bg);
+    border: 1px solid var(--admin-input-border);
+    color: var(--admin-input-text);
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+}
+
+.admin-select:focus {
+    outline: none;
+    border-color: var(--admin-input-focus-border);
+    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+}

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Logos</title>
+    <style>
+        body { display: flex; flex-direction: column; align-items: center; background: white; }
+        .logo { margin: 20px; position: relative; text-align: center; }
+        canvas { border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <h2>AliExpress Logo</h2>
+        <canvas id="aliexpressCanvas" width="300" height="100"></canvas>
+        <a id="aliexpressDownload" download="aliexpress-logo.png">Download AliExpress Logo</a>
+    </div>
+    <div class="logo">
+        <h2>Amazon Logo (Grayscale)</h2>
+        <canvas id="amazonCanvas" width="300" height="100"></canvas>
+        <a id="amazonDownload" download="amazon-logo.png">Download Amazon Logo</a>
+    </div>
+
+    <script>
+        // AliExpress Logo
+        const aliCanvas = document.getElementById("aliexpressCanvas");
+        const aliCtx = aliCanvas.getContext("2d");
+        
+        // Background
+        aliCtx.fillStyle = "#ffffff";
+        aliCtx.fillRect(0, 0, 300, 100);
+        
+        // Text
+        aliCtx.font = "bold 40px Arial";
+        aliCtx.fillStyle = "#e62e04";
+        aliCtx.fillText("AliExpress", 20, 60);
+        
+        document.getElementById("aliexpressDownload").href = aliCanvas.toDataURL("image/png");
+
+        // Amazon Logo
+        const amazonCanvas = document.getElementById("amazonCanvas");
+        const amazonCtx = amazonCanvas.getContext("2d");
+        
+        // Background
+        amazonCtx.fillStyle = "#ffffff";
+        amazonCtx.fillRect(0, 0, 300, 100);
+        
+        // Text
+        amazonCtx.font = "bold 40px Arial";
+        amazonCtx.fillStyle = "#666666";
+        amazonCtx.fillText("Amazon", 20, 60);
+        
+        // Draw smile
+        amazonCtx.beginPath();
+        amazonCtx.moveTo(220, 60);
+        amazonCtx.quadraticCurveTo(250, 30, 280, 60);
+        amazonCtx.lineWidth = 3;
+        amazonCtx.strokeStyle = "#666666";
+        amazonCtx.stroke();
+        
+        document.getElementById("amazonDownload").href = amazonCanvas.toDataURL("image/png");
+    </script>
+</body>
+</html>
