@@ -80,8 +80,14 @@ class ProductController extends Controller
             ->count();
         });
 
-        // Paginate with a small number of items 
-        $products = $query->paginate(10);
+        // Paginate with configurable per-page options
+        $perPage = $request->get('per_page', 10);
+        $allowedPerPage = [10, 15, 25, 50, 100];
+        if (!in_array($perPage, $allowedPerPage)) {
+            $perPage = 10;
+        }
+
+        $products = $query->paginate($perPage)->withQueryString();
 
         // Get categories efficiently
         $categories = Category::select('id', 'category_name')
@@ -117,7 +123,7 @@ class ProductController extends Controller
             }
         }
 
-        return view('admin.products.index', compact('products', 'categories', 'viewedToday', 'savedToday'));
+        return view('admin.products.index', compact('products', 'categories', 'viewedToday', 'savedToday', 'perPage', 'allowedPerPage'));
     }
 
     /**
