@@ -1,0 +1,314 @@
+/* Enhanced Authentication Pages Styling */
+
+/* CSS Variables specific to authentication */
+:root {
+    /* Auth Colors */
+    --auth-gradient-from: var(--primary);
+    --auth-gradient-to: var(--primary-dark);
+    --auth-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --auth-card-border-radius: 0.5rem;
+    --auth-input-focus-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+    --auth-button-shadow: 0 2px 4px -1px rgba(108, 99, 255, 0.2);
+}
+
+/* Simple body styling for auth pages */
+.auth-body {
+    background: linear-gradient(
+        135deg,
+        var(--bg-darker) 0%,
+        var(--bg-dark) 50%,
+        var(--bg-medium) 100%
+    );
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Auth container */
+.auth-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Simple auth card */
+.auth-card {
+    background: rgba(var(--bg-medium-rgb, 45, 55, 72), 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--auth-card-border-radius);
+    box-shadow: var(--auth-card-shadow);
+    backdrop-filter: blur(10px);
+}
+
+/* Form styling */
+.auth-form {
+    position: relative;
+    z-index: 2;
+}
+
+/* Input styling */
+.auth-input {
+    background: rgba(var(--bg-light-rgb, 55, 65, 81), 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: var(--text-light);
+    font-size: 1rem;
+    padding: 0.875rem 1rem;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: var(--auth-input-focus-shadow);
+    background: rgba(var(--bg-light-rgb, 55, 65, 81), 0.9);
+}
+
+.auth-input::placeholder {
+    color: var(--gray-400);
+}
+
+/* Label styling */
+.auth-label {
+    color: var(--gray-300);
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Button styling */
+.auth-btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: var(--auth-button-shadow);
+    cursor: pointer;
+}
+
+.auth-btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+}
+
+/* Secondary button */
+.auth-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-btn-secondary:hover {
+    background: rgba(108, 99, 255, 0.2);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* Link styling */
+.auth-link {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-link:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Checkbox styling */
+.auth-checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.25rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(var(--bg-light-rgb, 55, 65, 81), 0.7);
+    cursor: pointer;
+}
+
+.auth-checkbox:checked {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-color: var(--primary);
+}
+
+.auth-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+}
+
+/* Error message styling */
+.auth-error {
+    color: var(--error);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    background: rgba(var(--error-rgb, 239, 68, 68), 0.1);
+    border-left: 4px solid var(--error);
+    border-radius: 0.25rem;
+}
+
+/* Success message styling */
+.auth-success {
+    color: var(--success);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    background: rgba(var(--success-rgb, 16, 185, 129), 0.1);
+    border-left: 4px solid var(--success);
+    border-radius: 0.25rem;
+}
+
+/* Remember me styling */
+.auth-remember {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray-300);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.auth-remember:hover {
+    color: var(--text-light);
+}
+
+/* Form section spacing */
+.auth-form-section {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Action buttons container */
+.auth-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Auth divider */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    color: var(--gray-400);
+    font-size: 0.875rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+}
+
+.auth-divider::before {
+    margin-right: 1rem;
+}
+
+.auth-divider::after {
+    margin-left: 1rem;
+}
+
+/* Register prompt styling */
+.auth-register-prompt {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.auth-register-prompt p {
+    color: var(--gray-300);
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+    .auth-card {
+        margin: 1rem;
+        border-radius: 1rem;
+    }
+
+    .auth-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .auth-btn-primary,
+    .auth-btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .auth-register-prompt {
+        margin: 1rem;
+    }
+}
+
+/* Animation for form elements */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-form-section {
+    animation: slideInUp 0.6s ease forwards;
+}
+
+.auth-form-section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.auth-form-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.auth-form-section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.auth-form-section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Loading state */
+.auth-btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.auth-btn-primary:disabled:hover {
+    transform: none;
+    box-shadow: var(--auth-button-shadow);
+}
