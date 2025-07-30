@@ -18,7 +18,11 @@ if (! function_exists('convertYmdToMdy')) {
     {
         try {
             // Create client for AliExpress API
+<<<<<<< HEAD
             $c = new IopClient('https://api-sg.aliexpress.com/sync', '514864', 'MX9wpA5ukYeWkzbz9Kp4xOPZX0fTC62W');
+=======
+            $c = new IopClient('https://api-sg.aliexpress.com/sync', env('ALIEXPRESS_APP_KEY'), env('ALIEXPRESS_SECRET_KEY'));
+>>>>>>> 80b369c691731733c4369a9a951585a8d4d63298
             $request = new IopRequest('aliexpress.affiliate.product.query');
             // Set API parameters for product search
             $request->addApiParam('app_signature', 'ShopBot AI');
@@ -60,7 +64,11 @@ if (! function_exists('AliExpressCategories')) {
     {
         try {
             // Create client for AliExpress API
+<<<<<<< HEAD
             $c = new IopClient('https://api-sg.aliexpress.com/sync', '514864', 'MX9wpA5ukYeWkzbz9Kp4xOPZX0fTC62W');
+=======
+            $c = new IopClient('https://api-sg.aliexpress.com/sync', env('ALIEXPRESS_APP_KEY'), env('ALIEXPRESS_SECRET_KEY'));
+>>>>>>> 80b369c691731733c4369a9a951585a8d4d63298
             $request = new IopRequest('aliexpress.affiliate.category.get');
 
             // Set API parameters
